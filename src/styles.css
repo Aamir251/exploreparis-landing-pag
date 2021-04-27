@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Raleway:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+.home-section,
+.eiffel-section,
+.seine-section {
+  height: 100vh;
+  width: 100vw;
+}
+.bg-img {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -1000;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("images/home.jpg");
+  filter: brightness(0.7);
+  filter: contrast(1.2);
+}
+
+.title-container {
+  height: inherit;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 2.5rem;
+}
+
+h1 {
+  font-size: 5rem;
+  font-family: "raleway", sans-serif;
+  color: #191c39;
+  opacity: 0;
+  transform: translateX(-25%);
+  animation: animateTitle 1s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+.eiffel-section h1 {
+  color: #0c0729;
+  animation: eiffeltitle 1s ease forwards;
+  animation-delay: 1s;
+}
+.seine-section h1 {
+  color: whitesmoke;
+  animation: seinetitle 1s ease forwards;
+  animation-delay: 1s;
+}
+.line {
+  position: absolute;
+  /* height: 12rem; */
+  width: 0.2rem;
+  background-color: #a1a1a1;
+  left: 1rem;
+  animation: animateLine 0.5s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+.btn {
+  height: 3rem;
+  padding: 0 1rem;
+  width: 10rem;
+  margin-top: -4rem;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  background: rgba(17, 16, 80, 0.68);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@keyframes animateLine {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 12rem;
+    opacity: 1;
+  }
+}
+
+@keyframes animateTitle {
+  50% {
+    opacity: 1;
+    transform: translateX(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes eiffeltitle {
+  50% {
+    opacity: 0;
+    transform: translateX(25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes seinetitle {
+  from {
+    transform: translateY(30%);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+p {
+  font-family: "nunito", sans-serif;
+  text-align: center;
+  font-size: 1.1rem;
+  position: absolute;
+  bottom: 2.5rem;
+  color: white;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  animation: tagline 0.5s ease-in forwards;
+  animation-delay: 1.8s;
+}
+.border {
+  border: 1px solid whitesmoke;
+}
+h3 {
+  font-family: "nunito", sans-serif;
+  color: wheat;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+.slides {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.slide img {
+  width: 15rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.slide:nth-of-type(2) {
+  transform: translateX(-10rem);
+}
+
+.home-section {
+  animation: home 0.8s ease-in-out;
+}
+.eiffel-section {
+  animation: eiffel 0.8s ease forwards;
+}
+.seine-section {
+  animation: seine 0.8s ease forwards;
+}
+@keyframes home {
+  from {
+    /* transform: translateY(40%);
+    transform: translateX(40%); */
+    transform: translate(45%, 45%);
+  }
+  to {
+    /* transform: translateY(0);
+    transform: translateX(0); */
+    transform: translate(0);
+  }
+}
+@keyframes seine {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+h3 {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+@keyframes eiffel {
+  from {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tagline {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
